@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <TextView
@@ -23,6 +24,7 @@
         android:layout_width="67dp"
         android:layout_height="40dp"
         android:layout_weight="1"
+        android:background="@color/button"
 
 
         android:text="✔"
@@ -41,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:background="@color/button"
 
         android:text="LOAD"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,6 +57,7 @@
         android:id="@+id/del"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/button"
 
         android:text="DELETE"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,8 +73,10 @@
         android:layout_height="478dp"
         android:layout_marginTop="40dp"
         android:layout_weight="9"
+        android:background="@android:drawable/editbox_dropdown_light_frame"
 
         android:gravity="top"
+        android:hint="메모를 입력하세요"
 
         android:textIsSelectable="false"
         app:layout_constraintBottom_toBottomOf="parent"
