@@ -63,5 +63,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.891" />
 
+    <EditText
+        android:id="@+id/content"
+        android:layout_width="350dp"
+        android:layout_height="478dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="9"
+
+        android:gravity="top"
+
+        android:textIsSelectable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
