@@ -49,30 +49,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view){ //버튼 클릭했을때 어떤 명령이 실행되어야 하는지 Switch로 케이스 나눠서 실행
             switch(view.getId()){
-                case R.id.load: //불러오기 버튼을 클릭했을때
-                    Log.i("MAIN", "LOAD Start");
-                    FileInputStream fis = null;
-                    try{
-                        fis = openFileInput("memo.txt");//바로 전에 저장했던 파일을 불러옴
-                        byte[]data = new byte[fis.available()];
-                        while(fis.read(data) != -1){
-
-                        }
-                        content.setText(new String(data));
-                        Toast.makeText(MainActivity.this, "LOAD!!", Toast.LENGTH_SHORT).show();
-
-
-                    }catch(Exception e){
-                        e.printStackTrace();
-                    }finally{
-                        try{
-                            if(fis != null)
-                                fis.close();
-                        }catch(Exception e){
-                            e.printStackTrace();
-                        }
-                    }
-                    break;
                 case R.id.save: //저장하기 버튼 클릭했을때
                     Log.i("MAIN", "LOAD Start");
                     FileOutputStream fos = null;
@@ -98,9 +74,33 @@ public class MainActivity extends AppCompatActivity {
                     Log.i("MAIN", "DELETE!!");
                     boolean bool = deleteFile("memo.txt");
                     if(bool){
-                        Toast.makeText(MainActivity.this, "DELETE!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "DELETE!!", Toast.LENGTH_SHORT).show();//삭제 완료했다는 토스트 메세지 출력
                     }else{
                         Toast.makeText(MainActivity.this,"DELETE Failure", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                case R.id.load: //불러오기 버튼을 클릭했을때
+                    Log.i("MAIN", "LOAD Start");
+                    FileInputStream fis = null;
+                    try{
+                        fis = openFileInput("memo.txt");//바로 전에 저장했던 파일을 불러옴
+                        byte[]data = new byte[fis.available()];
+                        while(fis.read(data) != -1){
+
+                        }
+                        content.setText(new String(data));
+                        Toast.makeText(MainActivity.this, "LOAD!!", Toast.LENGTH_SHORT).show();//불러오기 완료 메세지 띄우기
+
+
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }finally{
+                        try{
+                            if(fis != null)
+                                fis.close();
+                        }catch(Exception e){
+                            e.printStackTrace();
+                        }
                     }
                     break;
 
